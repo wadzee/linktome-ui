@@ -31,6 +31,32 @@
     @apply sm:text-[42px];
     @apply sm:leading-[52.5px];
   }
+
+  details {
+    @apply py-6;
+    @apply border-dotted;
+    @apply border-b;
+    @apply border-[#B4B4C880];
+  }
+
+  summary {
+    @apply block;
+    @apply font-bold;
+  }
+
+  summary::after {
+    margin-left: 1ch;
+    display: inline-block;
+    content: '+';
+    transform: scale(1.5);
+    transition: 0.2s;
+    float: right;
+    @apply text-yellow;
+  }
+
+  details[open] > summary::after {
+    transform: scale(1.5) rotate(-45deg);
+  }
 }
 
 @layer utilities {

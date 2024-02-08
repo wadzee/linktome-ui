@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     textColor: {
       navy: '#23285A',
+      yellow: '#FBFF27',
       'light-navy': '#B4B4C8',
       'light-tan': '#F6EBD7',
     },

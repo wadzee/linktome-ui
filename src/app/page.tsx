@@ -1,7 +1,9 @@
+import { Accordian } from 'src/components/Accordian/Accordian'
 import { Country } from 'src/constant/country'
 import { Flag } from 'src/components/Flag/Flag'
 import { Grid2Cols } from 'src/components/Grid/Grid2Cols'
 import { Grid3Cols } from 'src/components/Grid/Grid3Cols'
+import { HomeFaqs } from 'src/constant/homeFaq'
 import Image from 'next/image'
 import { Text } from 'src/components/Text/Text'
 
@@ -17,7 +19,7 @@ export default function Home() {
             Have your voice heard. Support your politician by donating now!
           </Text>
         </div>
-        <div className="relative h-[50vh] sm:h-[70%]">
+        <div className="relative h-[60vh] sm:h-[70%]">
           <Image
             src="/home-hero.png"
             alt="hero-image"
@@ -58,6 +60,7 @@ export default function Home() {
           </Text>
         </div>
       </Grid2Cols>
+      <Accordian className="my-12 sm:my-0" accordians={HomeFaqs} />
     </main>
   )
 }

@@ -1,21 +1,24 @@
 export interface AccordianProps {
-  title: string
-  content: string
+  accordians: {
+    title: string
+    content: string
+  }[]
+  className?: string
 }
 
-export const Accordian = (props: AccordianProps[]) => {
+export const Accordian = ({ accordians, className }: AccordianProps) => {
   return (
-    <div>
-      {props.map(({ title, content }, idx) => {
+    <section className={className}>
+      {accordians.map(({ title, content }, idx) => {
         return (
-          <details key={idx}>
+          <details key={idx} className="hover:cursor-pointer">
             <summary>{title}</summary>
-            <div>
-              <p>{content}</p>
+            <div className="mt-4">
+              <p dangerouslySetInnerHTML={{ __html: content }} />
             </div>
           </details>
         )
       })}
-    </div>
+    </section>
   )
 }
