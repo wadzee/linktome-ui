@@ -1,5 +1,6 @@
 import 'src/styles/globals.css'
 
+import { Footer } from 'src/components/Footer/Footer'
 import type { Metadata } from 'next'
 import { Navbar } from 'src/components/Navbar/Navbar'
 import { Plus_Jakarta_Sans } from 'next/font/google'
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )

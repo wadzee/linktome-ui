@@ -1,4 +1,5 @@
 import { Accordian } from 'src/components/Accordian/Accordian'
+import { Button } from 'src/components/Button/Button'
 import { Country } from 'src/constant/country'
 import { Flag } from 'src/components/Flag/Flag'
 import { Grid2Cols } from 'src/components/Grid/Grid2Cols'
@@ -61,6 +62,20 @@ export default function Home() {
         </div>
       </Grid2Cols>
       <Accordian className="my-12 sm:my-0" accordians={HomeFaqs} />
+      <section className="flex flex-col gap-8 max-w-[650px] mx-auto text-center sm:my-20 my-12">
+        <h2>Are you a politician and want to raise funds?</h2>
+        <Text className="text-xl text-light-navy">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit
+          ante, posuere vulputate sollicitudin ac, egestas vel mi. Vivamus
+          finibus auctor massa, in malesuada purus euismod eget.
+        </Text>
+        <Button
+          variant="primary"
+          className="mx-auto py-4 px-6 rounded-full bg-secondary-dark"
+        >
+          Learn more
+        </Button>
+      </section>
     </main>
   )
 }

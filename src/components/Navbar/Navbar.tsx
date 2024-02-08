@@ -17,6 +17,14 @@ export const Navbar = () => {
         <Button variant="secondary">Login</Button>
         <Button>I&apos;m a politician</Button>
       </div>
+      <div className="sm:hidden">
+        <Image
+          src="/mobile-menu.svg"
+          alt="hamburger-logo"
+          height={28}
+          width={28}
+        />
+      </div>
     </nav>
   )
 }

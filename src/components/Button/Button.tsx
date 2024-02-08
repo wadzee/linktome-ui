@@ -5,12 +5,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary'
 }
 
-export const Button = ({ variant = 'primary', ...rest }: ButtonProps) => {
+export const Button = ({
+  variant = 'primary',
+  className,
+  ...rest
+}: ButtonProps) => {
   return (
     <button
       className={classNames(
         variant === 'primary' ? 'button-primary' : 'button-secondary',
-        'py-3 px-16'
+        'py-3 px-16',
+        className
       )}
       {...rest}
     />
