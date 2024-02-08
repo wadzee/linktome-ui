@@ -40,7 +40,6 @@
   }
 
   summary {
-    @apply block;
     @apply font-bold;
   }
 
@@ -56,6 +55,15 @@
 
   details[open] > summary::after {
     transform: scale(1.5) rotate(-45deg);
+  }
+
+  details > summary {
+    list-style: none;
+  }
+
+  details > summary::marker,
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 }
 
