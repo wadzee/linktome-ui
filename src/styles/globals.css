@@ -12,6 +12,10 @@
     @apply font-semibold;
     @apply hover:opacity-70;
   }
+  a {
+    @apply underline;
+    @apply text-yellow;
+  }
   u {
     @apply decoration-4;
     @apply underline-offset-8;
@@ -36,7 +40,7 @@
     @apply py-6;
     @apply border-dotted;
     @apply border-b;
-    @apply border-[#B4B4C880];
+    @apply border-brand-gray;
   }
 
   summary {
@@ -65,6 +69,12 @@
   details > summary::-webkit-details-marker {
     display: none;
   }
+
+  input {
+    @apply bg-transparent;
+    @apply w-full;
+    @apply focus:outline-none;
+  }
 }
 
 @layer utilities {
@@ -81,5 +91,14 @@
 
   .button-secondary {
     @apply text-light-navy;
+  }
+
+  .textfield {
+    position: relative;
+    @apply py-4 px-5;
+    @apply rounded-2xl;
+    @apply border-dotted;
+    @apply border;
+    @apply border-brand-gray;
   }
 }

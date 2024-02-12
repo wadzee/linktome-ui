@@ -12,6 +12,7 @@ const config: Config = {
       yellow: '#FBFF27',
       'light-navy': '#B4B4C8',
       'light-tan': '#F6EBD7',
+      tan: '#A56A32',
     },
     extend: {
       colors: {
@@ -19,6 +20,7 @@ const config: Config = {
         'secondary-dark': '#FBFF27',
         'primary-light': '#F6EBD7',
         'secondary-light': '#002FFF',
+        'brand-gray': '#B4B4C880',
       },
     },
   },

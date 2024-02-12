@@ -15,7 +15,9 @@ export const Navbar = () => {
       </Link>
       <div className="hidden sm:block h-[68px]">
         <Button variant="secondary">Login</Button>
-        <Button>I&apos;m a politician</Button>
+        <Link href="/politician">
+          <Button>I&apos;m a politician</Button>
+        </Link>
       </div>
       <div className="sm:hidden">
         <Image
