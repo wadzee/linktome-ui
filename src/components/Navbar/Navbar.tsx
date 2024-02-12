@@ -16,7 +16,7 @@ export const Navbar = () => {
       <div className="hidden sm:block h-[68px]">
         <Button variant="secondary">Login</Button>
         <Link href="/politician">
-          <Button>I&apos;m a politician</Button>
+          <Button isSquare>I&apos;m a politician</Button>
         </Link>
       </div>
       <div className="sm:hidden">

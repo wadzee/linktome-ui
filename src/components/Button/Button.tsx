@@ -16,7 +16,7 @@ export const Button = ({
     <button
       className={classNames(
         variant === 'primary' ? 'button-primary' : 'button-secondary',
-        isSquare && 'py-3 px-16 rounded-none',
+        isSquare && '!py-3 !px-12 rounded-none',
         'py-4 px-6 rounded-full',
         className
       )}
