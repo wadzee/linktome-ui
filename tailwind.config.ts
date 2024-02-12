@@ -13,6 +13,7 @@ const config: Config = {
       'light-navy': '#B4B4C8',
       'light-tan': '#F6EBD7',
       tan: '#A56A32',
+      white: '#fff',
     },
     extend: {
       colors: {

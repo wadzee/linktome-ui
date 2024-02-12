@@ -2,6 +2,7 @@ import { FieldError, FieldValues, Path, UseFormRegister } from 'react-hook-form'
 
 import { Flex } from '../Flex/Flex'
 import { HTMLInputTypeAttribute } from 'react'
+import { Text } from '../Text/Text'
 import classNames from 'classnames'
 
 interface TextFieldProps<T extends FieldValues> {
@@ -22,7 +23,7 @@ export function TextField<TValue extends FieldValues>({
   name,
 }: TextFieldProps<TValue>) {
   return (
-    <>
+    <div className="relative">
       <Flex className={classNames('textfield', errors && '!border-red-500')}>
         <input
           required
@@ -50,10 +51,10 @@ export function TextField<TValue extends FieldValues>({
         </label>
       </Flex>
       {errors?.message && (
-        <span className="-my-2 text-start text-xs mx-5 text-[rgb(239,68,68)]">
+        <Text className="absolute text-start text-xs mx-5 text-[rgb(239,68,68)] w-full">
           {errors.message}
-        </span>
+        </Text>
       )}
-    </>
+    </div>
   )
 }

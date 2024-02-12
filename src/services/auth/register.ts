@@ -20,7 +20,6 @@ export const RegisterUser = async (props: RegisterFormProps) => {
     '/register',
     props
   )
-  console.log('data', data)
 
   return data.url
 }

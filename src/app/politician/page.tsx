@@ -25,8 +25,10 @@ export default function PolictianPage() {
   } = useForm<RegisterFormProps>()
 
   const onSubmit = async (input: RegisterFormProps) => {
-    const res = await RegisterUser(input)
-    console.log('res', res)
+    const onboardingUrl = await RegisterUser(input)
+    if (onboardingUrl) {
+      window.location.assign(onboardingUrl)
+    }
   }
 
   return (
@@ -133,7 +135,7 @@ export default function PolictianPage() {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-8"
           >
-            <Grid2Cols className="gap-4">
+            <Grid2Cols className="gap-6 sm:gap-4">
               <TextField<RegisterFormProps>
                 label="First Name"
                 name="firstName"
