@@ -1,11 +1,12 @@
 import { FieldError, FieldValues, Path, UseFormRegister } from 'react-hook-form'
+import { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react'
 
 import { Flex } from '../Flex/Flex'
-import { HTMLInputTypeAttribute } from 'react'
 import { Text } from '../Text/Text'
 import classNames from 'classnames'
 
-interface TextFieldProps<T extends FieldValues> {
+interface TextFieldProps<T extends FieldValues>
+  extends InputHTMLAttributes<HTMLInputElement> {
   label: string
   name: Path<T>
   register: UseFormRegister<T>
@@ -21,11 +22,13 @@ export function TextField<TValue extends FieldValues>({
   type = 'text',
   errors,
   name,
+  ...rest
 }: TextFieldProps<TValue>) {
   return (
     <div className="relative">
       <Flex className={classNames('textfield', errors && '!border-red-500')}>
         <input
+          {...rest}
           required
           autoComplete="off"
           {...register(name, {

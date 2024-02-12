@@ -21,7 +21,7 @@ export default function PolictianPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<RegisterFormProps>()
 
   const onSubmit = async (input: RegisterFormProps) => {
@@ -167,7 +167,10 @@ export default function PolictianPage() {
               <Link href="/">Privacy Policy</Link> and {''}
               <Link href="/">Terms & Conditions</Link>
             </Text>
-            <Button className="sm:w-fit sm:mx-auto rounded-full ">
+            <Button
+              isLoading={isSubmitting}
+              className="sm:w-fit sm:mx-auto rounded-full "
+            >
               Submit
             </Button>
           </form>

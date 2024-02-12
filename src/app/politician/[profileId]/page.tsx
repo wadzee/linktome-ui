@@ -39,8 +39,6 @@ export default function PoliticanProfile({
     }
   }
 
-  console.log('test', isSubmitting)
-
   return (
     <main className="container mx-auto p-5 sm:p-0">
       <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
@@ -62,17 +60,30 @@ export default function PoliticanProfile({
           </List>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Grid2Cols className="gap-4 mb-6">
-              <Button type="button" onClick={() => onSubmit({ amount: 5 })}>
+              <Button
+                disabled={isSubmitting}
+                type="button"
+                onClick={() => onSubmit({ amount: 5 })}
+              >
                 Donate $5
               </Button>
-              <Button type="button" onClick={() => onSubmit({ amount: 20 })}>
+              <Button
+                disabled={isSubmitting}
+                type="button"
+                onClick={() => onSubmit({ amount: 20 })}
+              >
                 Donate $20
               </Button>
-              <Button type="button" onClick={() => onSubmit({ amount: 10 })}>
+              <Button
+                disabled={isSubmitting}
+                type="button"
+                onClick={() => onSubmit({ amount: 10 })}
+              >
                 Donate $10
               </Button>
               {!showCustomDonationField && (
                 <Button
+                  disabled={isSubmitting}
                   variant="secondary"
                   onClick={() => setShowCustomDonationField(true)}
                   className="border border-secondary-dark text-[#fff]"

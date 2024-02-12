@@ -33,11 +33,11 @@ export const Navbar = () => {
           </Link>
         </div>
       )}
-      {router?.profileId && (
+      {/* {router?.profileId && (
         <div className="h-[68px]">
           <Text>Share</Text>
         </div>
-      )}
+      )} */}
       <div className="sm:hidden" onClick={() => setShowMobileMenu(true)}>
         <Image
           src="/mobile-menu.svg"
