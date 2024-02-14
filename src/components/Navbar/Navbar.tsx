@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '../Button/Button'
+import { Flex } from '../Flex/Flex'
 import Image from 'next/image'
 import Link from 'next/link'
 import { List } from '../List/List'
@@ -13,10 +14,15 @@ export const Navbar = () => {
   const router = useParams()
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
-  console.log('showMobileMenu', showMobileMenu)
+  const isPoliticanProfile = !!router?.profileId
 
   return (
-    <nav className="p-4 sm:p-0 container mx-auto flex justify-between items-center">
+    <nav
+      className={classNames(
+        'p-4 sm:p-0 container mx-auto flex justify-between items-center',
+        isPoliticanProfile && 'h-[68px]'
+      )}
+    >
       <Link href="/">
         <Image
           src="/linktome-logo-light.svg"
@@ -33,12 +39,18 @@ export const Navbar = () => {
           </Link>
         </div>
       )}
-      {/* {router?.profileId && (
-        <div className="h-[68px]">
-          <Text>Share</Text>
-        </div>
-      )} */}
-      <div className="sm:hidden" onClick={() => setShowMobileMenu(true)}>
+      {isPoliticanProfile && (
+        <Button variant="secondary" className="!p-0">
+          <Flex gap="gap-4">
+            <Image src="/share.svg" alt="share image" width={18} height={18} />
+            <Text>Share</Text>
+          </Flex>
+        </Button>
+      )}
+      <div
+        className={classNames('sm:hidden', isPoliticanProfile && 'hidden')}
+        onClick={() => setShowMobileMenu(true)}
+      >
         <Image
           src="/mobile-menu.svg"
           alt="hamburger-logo"

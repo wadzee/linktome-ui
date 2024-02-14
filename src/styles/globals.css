@@ -12,6 +12,10 @@
     @apply font-semibold;
     @apply hover:opacity-70;
   }
+  button:disabled {
+    @apply cursor-not-allowed;
+    @apply opacity-50;
+  }
   a {
     @apply underline;
     @apply text-yellow;
@@ -74,6 +78,21 @@
     @apply bg-transparent;
     @apply w-full;
     @apply focus:outline-none;
+  }
+  input:disabled {
+    @apply opacity-50;
+    @apply cursor-not-allowed;
+  }
+
+  select {
+    @apply w-full;
+    @apply bg-transparent;
+    @apply focus:outline-none;
+  }
+
+  select option {
+    @apply bg-transparent;
+    @apply mt-12;
   }
 }
 

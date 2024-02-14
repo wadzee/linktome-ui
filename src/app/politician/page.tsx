@@ -13,8 +13,9 @@ import { HowItWorks } from 'src/constant/howItWorks'
 import Image from 'next/image'
 import Link from 'next/link'
 import { List } from 'src/components/List/List'
+import { SelectField } from 'src/components/Inputs/SelectField'
 import { Text } from 'src/components/Text/Text'
-import { TextField } from 'src/components/TextField/TextField'
+import { TextField } from 'src/components/Inputs/TextField'
 import { useForm } from 'react-hook-form'
 
 export default function PolictianPage() {
@@ -155,12 +156,26 @@ export default function PolictianPage() {
                 type="email"
                 errors={errors.email}
               />
-              <TextField<RegisterFormProps>
+              <SelectField<RegisterFormProps>
+                name="country"
+                register={register}
+                defaultValue="Malaysia"
+                options={[
+                  {
+                    label: 'Malaysia',
+                    value: 'Malaysia',
+                  },
+                  { label: 'New Zealand', value: 'New Zealand' },
+                ]}
+              />
+              {/* <TextField<RegisterFormProps>
                 label="Country"
                 name="country"
                 register={register}
+                defaultValue="Malaysia"
+                disabled
                 errors={errors.country}
-              />
+              /> */}
             </Grid2Cols>
             <Text isTextCenter className="max-w-[400px] mx-auto">
               By clicking &apos;Submit&apos; you agree to our{' '}

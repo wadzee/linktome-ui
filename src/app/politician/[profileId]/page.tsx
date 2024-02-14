@@ -11,7 +11,7 @@ import { Flag } from 'src/components/Flag/Flag'
 import { Grid2Cols } from 'src/components/Grid/Grid2Cols'
 import Image from 'next/image'
 import { List } from 'src/components/List/List'
-import { TextField } from 'src/components/TextField/TextField'
+import { TextField } from 'src/components/Inputs/TextField'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
@@ -42,7 +42,7 @@ export default function PoliticanProfile({
   return (
     <main className="container mx-auto p-5 sm:p-0">
       <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
-        <div className="relative h-[60vh] sm:h-[70%]">
+        <div className="relative sm:h-[70%] aspect-square sm:aspect-auto sm:w-full">
           <Image
             fill
             src="/profile.png"
@@ -68,14 +68,14 @@ export default function PoliticanProfile({
                 Donate $5
               </Button>
               <Button
-                disabled={isSubmitting}
+                isLoading={isSubmitting}
                 type="button"
                 onClick={() => onSubmit({ amount: 20 })}
               >
                 Donate $20
               </Button>
               <Button
-                disabled={isSubmitting}
+                isLoading={isSubmitting}
                 type="button"
                 onClick={() => onSubmit({ amount: 10 })}
               >
@@ -83,7 +83,7 @@ export default function PoliticanProfile({
               </Button>
               {!showCustomDonationField && (
                 <Button
-                  disabled={isSubmitting}
+                  isLoading={isSubmitting}
                   variant="secondary"
                   onClick={() => setShowCustomDonationField(true)}
                   className="border border-secondary-dark text-[#fff]"
@@ -101,7 +101,11 @@ export default function PoliticanProfile({
                   required={false}
                   errors={errors.amount}
                 />
-                <Button className="mt-4 sm:float-right w-full" type="submit">
+                <Button
+                  className="mt-4 sm:float-right w-full"
+                  type="submit"
+                  isLoading={isSubmitting}
+                >
                   Donate
                 </Button>
               </div>
