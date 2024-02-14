@@ -42,12 +42,12 @@ export default function PoliticanProfile({
   return (
     <main className="container mx-auto p-5 sm:p-0">
       <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
-        <div className="relative sm:h-[70%] aspect-square sm:aspect-auto sm:w-full">
+        <div className="relative sm:h-[70%] aspect-square w-1/2 mx-auto sm:aspect-auto sm:w-full">
           <Image
             fill
             src="/profile.png"
             alt="user-profile"
-            className="object-contain"
+            className="object-contain rounded-full sm:rounded-none"
           />
         </div>
         <List gap="gap-12">
@@ -68,14 +68,14 @@ export default function PoliticanProfile({
                 Donate $5
               </Button>
               <Button
-                isLoading={isSubmitting}
+                disabled={isSubmitting}
                 type="button"
                 onClick={() => onSubmit({ amount: 20 })}
               >
                 Donate $20
               </Button>
               <Button
-                isLoading={isSubmitting}
+                disabled={isSubmitting}
                 type="button"
                 onClick={() => onSubmit({ amount: 10 })}
               >
