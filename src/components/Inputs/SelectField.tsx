@@ -11,7 +11,6 @@ import classNames from 'classnames'
 
 interface TextFieldProps<T extends FieldValues>
   extends SelectHTMLAttributes<HTMLSelectElement> {
-  label: string
   name: Path<T>
   register: UseFormRegister<T>
   required?: boolean
@@ -23,7 +22,6 @@ interface TextFieldProps<T extends FieldValues>
 }
 
 export function SelectField<TValue extends FieldValues>({
-  label,
   register,
   required = true,
   errors,
@@ -34,7 +32,7 @@ export function SelectField<TValue extends FieldValues>({
   return (
     <div className="relative">
       <Flex className={classNames('textfield', errors && '!border-red-500')}>
-        <select>
+        <select {...rest}>
           {options.map(({ label, value }, idx) => (
             <option value={value} key="idx">
               {label}
