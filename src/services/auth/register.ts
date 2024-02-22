@@ -17,7 +17,7 @@ export const RegisterUser = async (props: RegisterFormProps) => {
   })
 
   const { data } = await axiosInstance.post<RegisterResponse>(
-    '/register',
+    '/signup',
     props
   )
 
