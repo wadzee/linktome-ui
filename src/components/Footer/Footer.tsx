@@ -14,12 +14,12 @@ export const Footer = () => {
         />
       </Link>
       <div className="flex flex-col sm:flex-row gap-8 order-1 sm:order-2 items-center">
-        <Link href="/">
-          <Text className="underline">Terms and conditions</Text>
-        </Link>
-        <Link href="/">
-          <Text className="underline">Privacy policy</Text>
-        </Link>
+        <button>
+          <Text className="underline text-yellow">Terms and conditions</Text>
+        </button>
+        <button>
+          <Text className="underline text-yellow">Privacy policy</Text>
+        </button>
       </div>
     </footer>
   )

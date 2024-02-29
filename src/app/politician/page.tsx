@@ -33,7 +33,7 @@ export default function PolictianPage() {
   }
 
   return (
-    <main className="container mx-auto p-5 sm:p-0">
+    <>
       <Grid2Cols className="sm:h-[60vh] sm:mx-20 sm:my-16 gap-8">
         <List className="order-2 sm:order-1">
           <h1>
@@ -192,6 +192,6 @@ export default function PolictianPage() {
           </form>
         </List>
       </section>
-    </main>
+    </>
   )
 }

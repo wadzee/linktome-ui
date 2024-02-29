@@ -7,20 +7,22 @@ import Link from 'next/link'
 import { List } from '../List/List'
 import { Text } from '../Text/Text'
 import classNames from 'classnames'
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 export const Navbar = () => {
   const router = useParams()
+  const pathname = usePathname()
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   const isPoliticanProfile = !!router?.profileId
+  const isLegalsPage = pathname.includes('/legals')
 
   return (
     <nav
       className={classNames(
         'p-4 sm:p-0 container mx-auto flex justify-between items-center',
-        isPoliticanProfile && 'h-[68px]'
+        isPoliticanProfile || (isLegalsPage && 'h-[68px]')
       )}
     >
       <Link href="/">
@@ -31,9 +33,11 @@ export const Navbar = () => {
           width={126}
         />
       </Link>
-      {!router?.profileId && (
+      {!router?.profileId && !isLegalsPage && (
         <div className="hidden sm:block h-[68px]">
-          <Link href='https://dashboard.linktome.xyz' target='_blank'><Button variant="secondary">Login</Button> </Link>
+          <Link href="https://dashboard.linktome.xyz" target="_blank">
+            <Button variant="secondary">Login</Button>{' '}
+          </Link>
           <Link href="/politician">
             <Button isSquare>I&apos;m a politician</Button>
           </Link>

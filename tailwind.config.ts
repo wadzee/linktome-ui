@@ -22,6 +22,7 @@ const config: Config = {
         'primary-light': '#F6EBD7',
         'secondary-light': '#002FFF',
         'brand-gray': '#B4B4C880',
+        'brand-tan': '#A56A32',
       },
     },
   },

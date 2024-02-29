@@ -40,6 +40,11 @@
     @apply sm:leading-[52.5px];
   }
 
+  h3 {
+    @apply font-bold;
+    @apply text-lg;
+  }
+
   details {
     @apply py-6;
     @apply border-dotted;
@@ -119,5 +124,27 @@
     @apply border-dotted;
     @apply border;
     @apply border-brand-gray;
+  }
+
+  .backdrop {
+    @apply fixed;
+    @apply h-screen;
+    @apply w-screen;
+    @apply left-0;
+    @apply top-0;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .legals {
+    @apply my-0;
+    @apply sm:my-12;
+  }
+
+  .legals > p {
+    @apply text-justify;
+    @apply text-light-navy;
   }
 }

@@ -13,7 +13,7 @@ import { Text } from 'src/components/Text/Text'
 
 export default function HomePage() {
   return (
-    <main className="container mx-auto p-5 sm:p-0">
+    <>
       <Grid2Cols className="sm:h-[60vh] sm:mx-20 sm:my-16 gap-8">
         <List>
           <h1>
@@ -86,6 +86,6 @@ export default function HomePage() {
           </Link>
         </List>
       </section>
-    </main>
+    </>
   )
 }

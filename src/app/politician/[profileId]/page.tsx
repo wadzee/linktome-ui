@@ -40,91 +40,86 @@ export default function PoliticanProfile({
   }
 
   return (
-    <main className="container mx-auto p-5 sm:p-0">
-      <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
-        <div className="relative sm:h-[70%] aspect-square w-1/2 mx-auto sm:aspect-auto sm:w-full">
-          <Image
-            fill
-            src="/profile.png"
-            alt="user-profile"
-            className="object-contain rounded-full sm:rounded-none"
-          />
-        </div>
-        <List gap="gap-12">
-          <List gap="gap-4">
-            <h2>John Smith</h2>
-            <Flag
-              name="Prime Minister | Democrat"
-              flag="/flags/australia.png"
-            />
-          </List>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid2Cols className="gap-4 mb-6">
-              <Button
-                disabled={isSubmitting}
-                type="button"
-                onClick={() => onSubmit({ amount: 5 })}
-              >
-                Donate $5
-              </Button>
-              <Button
-                disabled={isSubmitting}
-                type="button"
-                onClick={() => onSubmit({ amount: 20 })}
-              >
-                Donate $20
-              </Button>
-              <Button
-                disabled={isSubmitting}
-                type="button"
-                onClick={() => onSubmit({ amount: 10 })}
-              >
-                Donate $10
-              </Button>
-              {!showCustomDonationField && (
-                <Button
-                  isLoading={isSubmitting}
-                  variant="secondary"
-                  onClick={() => setShowCustomDonationField(true)}
-                  className="border border-secondary-dark text-[#fff]"
-                >
-                  Custom Amount
-                </Button>
-              )}
-            </Grid2Cols>
-            {showCustomDonationField && (
-              <div>
-                <TextField<PaymentFormProps>
-                  label="Amount ($)"
-                  name="amount"
-                  register={register}
-                  required={false}
-                  type="tel"
-                  errors={errors.amount}
-                />
-                <Button
-                  className="mt-4 sm:float-right w-full"
-                  type="submit"
-                  isLoading={isSubmitting}
-                >
-                  Donate
-                </Button>
-              </div>
-            )}
-          </form>
-
-          <Accordian
-            className="border-t border-brand-gray border-dotted"
-            accordians={[
-              {
-                title: 'About me',
-                content:
-                  '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin.</p>',
-              },
-            ]}
-          />
+    <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
+      <div className="relative sm:h-[70%] aspect-square w-1/2 mx-auto sm:aspect-auto sm:w-full">
+        <Image
+          fill
+          src="/profile.png"
+          alt="user-profile"
+          className="object-contain rounded-full sm:rounded-none"
+        />
+      </div>
+      <List gap="gap-12">
+        <List gap="gap-4">
+          <h2>John Smith</h2>
+          <Flag name="Prime Minister | Democrat" flag="/flags/australia.png" />
         </List>
-      </Grid2Cols>
-    </main>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid2Cols className="gap-4 mb-6">
+            <Button
+              disabled={isSubmitting}
+              type="button"
+              onClick={() => onSubmit({ amount: 5 })}
+            >
+              Donate $5
+            </Button>
+            <Button
+              disabled={isSubmitting}
+              type="button"
+              onClick={() => onSubmit({ amount: 20 })}
+            >
+              Donate $20
+            </Button>
+            <Button
+              disabled={isSubmitting}
+              type="button"
+              onClick={() => onSubmit({ amount: 10 })}
+            >
+              Donate $10
+            </Button>
+            {!showCustomDonationField && (
+              <Button
+                isLoading={isSubmitting}
+                variant="secondary"
+                onClick={() => setShowCustomDonationField(true)}
+                className="border border-secondary-dark text-[#fff]"
+              >
+                Custom Amount
+              </Button>
+            )}
+          </Grid2Cols>
+          {showCustomDonationField && (
+            <div>
+              <TextField<PaymentFormProps>
+                label="Amount ($)"
+                name="amount"
+                register={register}
+                required={false}
+                type="tel"
+                errors={errors.amount}
+              />
+              <Button
+                className="mt-4 sm:float-right w-full"
+                type="submit"
+                isLoading={isSubmitting}
+              >
+                Donate
+              </Button>
+            </div>
+          )}
+        </form>
+
+        <Accordian
+          className="border-t border-brand-gray border-dotted"
+          accordians={[
+            {
+              title: 'About me',
+              content:
+                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin.</p>',
+            },
+          ]}
+        />
+      </List>
+    </Grid2Cols>
   )
 }
