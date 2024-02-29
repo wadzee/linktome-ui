@@ -64,10 +64,10 @@ export default function PolictianPage() {
         </div>
         <List className="order-1 sm:order-2">
           <h2>Donate paid directly to your bank account</h2>
-          <Text className="text-light-navy sm:max-w-[300px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit
-            ante, posuere vulputate sollicitudin ac, egestas vel mi. Vivamus
-            finibus auctor massa, in malesuada purus euismod eget.
+          <Text className="text-light-navy sm:max-w-[75%]">
+            Simplify your finances. Experience swift and direct transfers your
+            funds, your account. Say goodbye to delays and paperwork, and keep
+            your campaign running smoothly.
           </Text>
         </List>
       </Grid2Cols>
@@ -75,10 +75,11 @@ export default function PolictianPage() {
         <List>
           <List className="sm:text-center max-w-[650px] mx-auto">
             <h2>Monitor your fundraising performance</h2>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              velit ante, posuere vulputate sollicitudin ac, egestas vel mi.
-              Vivamus finibus auctor massa, in malesuada purus euismod eget.
+            <Text className="text-light-navy">
+              Stay in control with real-time insights. Our platform equips you
+              with comprehensive analytics to track donor engagement, identify
+              trends, and make informed decisions, ensuring your fundraising
+              strategy is always optimized
             </Text>
           </List>
           <Grid3Cols className="sm:gap-10">
@@ -119,7 +120,7 @@ export default function PolictianPage() {
       <section>
         <Grid3Cols className="sm:gap-10">
           {HowItWorks.map(({ title, content }, idx) => (
-            <Card label={title} order={idx + 1} key={idx}>
+            <Card label={title} order={idx + 1} key={idx} className="h-full">
               <Text className="text-light-navy">{content}</Text>
             </Card>
           ))}

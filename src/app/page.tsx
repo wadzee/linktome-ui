@@ -57,10 +57,11 @@ export default function HomePage() {
         </div>
         <List className="order-1 sm:order-2">
           <h2>Donate directly to intended recipient at all times</h2>
-          <Text className="text-light-navy sm:max-w-[300px]">
-            Paragraph about how all our profiles are manually verified and that
-            we use secure payment processing platform Stripe Connect to collect
-            and distribute donations directly to the politician.
+          <Text className="text-light-navy sm:max-w-[75%]">
+            Ensure your generosity makes a direct impact. Our platform
+            guarantees your donations reach their intended recipients without
+            any middlemen, fostering a transparent and effective giving
+            experience.
           </Text>
         </List>
       </Grid2Cols>
@@ -69,9 +70,10 @@ export default function HomePage() {
         <List className="max-w-[650px] mx-auto text-center sm:my-20 my-12">
           <h2>Are you a politician and want to raise funds?</h2>
           <Text className="text-xl text-light-navy">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit
-            ante, posuere vulputate sollicitudin ac, egestas vel mi. Vivamus
-            finibus auctor massa, in malesuada purus euismod eget.
+            Elevate your campaign effortlessly. If you&apos;re a politician, our
+            streamlined platform empowers you to connect with supporters
+            seamlessly, making fundraising a breeze so you can focus on your
+            campaign priorities.
           </Text>
 
           <Link href="/politician">

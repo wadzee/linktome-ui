@@ -7,7 +7,7 @@ export const HowItWorks = [
   {
     title: 'Monitor donations',
     content:
-      'Receive donations from your supported and monitor your campaign success.',
+      'Transparency at a glance. With our intuitive monitoring system, track every donation to your campaign. Foster trust, stay informed, and confidently guide your campaign towards meeting and exceeding fundraising goals',
   },
   {
     title: 'Secure fortnightly payouts',
