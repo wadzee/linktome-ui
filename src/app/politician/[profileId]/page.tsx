@@ -99,7 +99,7 @@ export default function PoliticanProfile({
                   name="amount"
                   register={register}
                   required={false}
-                  type="number"
+                  type="tel"
                   errors={errors.amount}
                 />
                 <Button
