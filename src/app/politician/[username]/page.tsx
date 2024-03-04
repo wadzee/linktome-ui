@@ -13,13 +13,20 @@ import Image from 'next/image'
 import { List } from 'src/components/List/List'
 import { TextField } from 'src/components/Inputs/TextField'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import {
+  UserProfileResponse,
+  getUserProfile,
+} from 'src/services/auth/getUserProfile'
+import { useRouter } from 'next/navigation'
 
 export default function PoliticanProfile({
   params,
 }: {
-  params: { profileId: string }
+  params: { username: string }
 }) {
+  const router = useRouter()
+  const [data, setData] = useState<UserProfileResponse>()
   const [showCustomDonationField, setShowCustomDonationField] = useState(false)
 
   const {
@@ -31,7 +38,7 @@ export default function PoliticanProfile({
   const onSubmit = async ({ amount }: PaymentFormProps) => {
     const stripeUrl = await createPaymentIntent({
       amount: parseFloat(amount.toString()),
-      accountId: params.profileId,
+      accountId: data?.stripeId!,
     })
 
     if (stripeUrl) {
@@ -39,20 +46,75 @@ export default function PoliticanProfile({
     }
   }
 
+  const fetchUserProfile = useCallback(
+    async (username: string) => {
+      const data = await getUserProfile(username)
+
+      if (!data) {
+        router.replace('/')
+      }
+
+      setData(data)
+    },
+    [router]
+  )
+
+  useEffect(() => {
+    if (params.username) {
+      fetchUserProfile(params.username)
+    }
+  }, [fetchUserProfile, params.username])
+
+  if (!data) {
+    return (
+      <div className="relative min-h-[85vh]">
+        <span className="absolute left-[49%] top-[50%]">
+          <svg
+            className="animate-spin -ml-1 mr-3 text-yellow"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            width={48}
+            height={48}
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </span>
+      </div>
+    )
+  }
+
   return (
     <Grid2Cols className="sm:h-[75vh] sm:mx-20 sm:my-16 gap-8">
       <div className="relative sm:h-[70%] aspect-square w-1/2 mx-auto sm:aspect-auto sm:w-full">
-        <Image
-          fill
-          src="/profile.png"
-          alt="user-profile"
-          className="object-contain rounded-full sm:rounded-none"
-        />
+        {data?.image && (
+          <Image
+            fill
+            src={`https://linktome-assets.s3.ap-southeast-1.amazonaws.com/${data?.id}/${data?.image}`}
+            alt="user-profile"
+            className="object-contain rounded-full sm:rounded-2xl"
+          />
+        )}
       </div>
       <List gap="gap-12">
         <List gap="gap-4">
-          <h2>John Smith</h2>
-          <Flag name="Prime Minister | Democrat" flag="/flags/australia.png" />
+          <h2>{data?.firstName + ' ' + data?.lastName}</h2>
+          <Flag
+            name={`${data?.role} ${data?.party}`}
+            flag={`/flags/${data?.country?.toLowerCase()}.png`}
+          />
         </List>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid2Cols className="gap-4 mb-6">
@@ -114,8 +176,7 @@ export default function PoliticanProfile({
           accordians={[
             {
               title: 'About me',
-              content:
-                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit ante, posuere vulputate sollicitudin.</p>',
+              content: `<p>${data?.about}</p>`,
             },
           ]}
         />
