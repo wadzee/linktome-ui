@@ -180,8 +180,13 @@ export default function PolictianPage() {
             </Grid2Cols>
             <Text isTextCenter className="max-w-[400px] mx-auto">
               By clicking &apos;Submit&apos; you agree to our{' '}
-              <Link href="/">Privacy Policy</Link> and {''}
-              <Link href="/">Terms & Conditions</Link>
+              <Link href="/legals/privacy-policy" target="_blank">
+                Privacy Policy
+              </Link>{' '}
+              and {''}
+              <Link href="/legals/tnc" target="_blank">
+                Terms & Conditions
+              </Link>
             </Text>
             <Button
               isLoading={isSubmitting}

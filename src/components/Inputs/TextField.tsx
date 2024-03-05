@@ -48,7 +48,7 @@ export function TextField<TValue extends FieldValues>({
               },
             }),
           })}
-          className={classNames('peer mt-3')}
+          className={classNames('peer mt-3 z-10')}
         />
         <label
           className={classNames(
