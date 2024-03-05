@@ -34,30 +34,11 @@ export function SelectField<TValue extends FieldValues>({
       <Flex className={classNames('textfield', errors && '!border-red-500')}>
         <select {...rest}>
           {options.map(({ label, value }, idx) => (
-            <option value={value} key="idx">
+            <option value={value} key={idx} className="text-navy">
               {label}
             </option>
           ))}
         </select>
-        {/* <input
-          {...rest}
-          required
-          autoComplete="off"
-          {...register(name, {
-            required,
-          })}
-          className={classNames('peer mt-3')}
-        />
-        <label
-          className={classNames(
-            'absolute left-5',
-            'peer-focus:top-2 peer-focus:text-xs',
-            'peer-valid:top-2 peer-valid:text-xs',
-            'peer-disabled:top-2 peer-disabled:text-xs peer-disabled:opacity-50'
-          )}
-        >
-          {label}
-        </label> */}
       </Flex>
       {errors?.message && (
         <Text className="absolute text-start text-xs mx-5 text-[rgb(239,68,68)] w-full">
