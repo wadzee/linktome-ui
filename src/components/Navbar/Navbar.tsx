@@ -91,12 +91,14 @@ export const Navbar = () => {
           <Link href="/politician" onClick={() => setShowMobileMenu(false)}>
             <Button className="w-full">I&apos;m a politician</Button>
           </Link>
-          <Button
-            className="h-fit border border-secondary-dark text-white"
-            variant="secondary"
-          >
-            Login
-          </Button>
+          <Link href="https://dashboard.linktome.xyz" target="_blank">
+            <Button
+              className="h-fit border border-secondary-dark text-white"
+              variant="secondary"
+            >
+              Login
+            </Button>
+          </Link>
         </List>
       </div>
     </nav>
