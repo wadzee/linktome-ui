@@ -42,7 +42,9 @@ export default function PolictianPage() {
           <Text className="text-light-navy sm:text-xl sm:max-w-[300px]">
             Join our platform to start your political fundraising journey.
           </Text>
-          <Button className="sm:w-fit">Join now</Button>
+          <Link href="#join-form">
+            <Button>Join now</Button>{' '}
+          </Link>
         </List>
         <div className="relative h-[60vh] sm:h-[70%] order-1 sm:order-2">
           <Image
@@ -127,7 +129,10 @@ export default function PolictianPage() {
         </Grid3Cols>
       </section>
       <Accordian className="my-12" accordians={HomeFaqs} />
-      <section className="border border-brand-gray border-dotted rounded-2xl p-5 sm:p-12">
+      <section
+        className="border border-brand-gray border-dotted rounded-2xl p-5 sm:p-12"
+        id="join-form"
+      >
         <List className="text-center" gap="gap-6">
           <h2>Join now</h2>
           <Text>
