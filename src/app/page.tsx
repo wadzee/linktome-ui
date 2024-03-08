@@ -25,10 +25,10 @@ export default function HomePage() {
         </List>
         <div className="relative h-[60vh] sm:h-[70%]">
           <Image
+            className="object-contain"
             src="/home-hero.png"
             alt="hero-image"
             fill
-            className="object-contain"
           />
         </div>
       </Grid2Cols>

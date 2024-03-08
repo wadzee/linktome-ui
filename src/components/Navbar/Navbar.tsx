@@ -93,7 +93,7 @@ export const Navbar = () => {
           </Link>
           <Link href="https://dashboard.linktome.xyz" target="_blank">
             <Button
-              className="h-fit border border-secondary-dark text-white"
+              className="h-fit border border-secondary-dark text-white w-full"
               variant="secondary"
             >
               Login
