@@ -8,7 +8,6 @@ import { RefreshStripeOnboardingURL } from 'src/services/auth/refreshStripeOnboa
 
 export default function RefreshStripeOnboarding() {
   const queryParam = useSearchParams()
-  const stripeId = queryParam.get('id')
 
   const fetchRefreshStripeURL = useCallback(async (id: string) => {
     const url = await RefreshStripeOnboardingURL(id)
@@ -18,10 +17,12 @@ export default function RefreshStripeOnboarding() {
   }, [])
 
   useEffect(() => {
+    const stripeId = queryParam.get('id')
+
     if (stripeId) {
       fetchRefreshStripeURL(stripeId)
     }
-  }, [stripeId, fetchRefreshStripeURL])
+  }, [fetchRefreshStripeURL, queryParam])
 
   return (
     <List
