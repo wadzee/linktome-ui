@@ -5,6 +5,7 @@ export interface UserProfileResponse extends UserProfile {
   username: string
   stripeId: string
   id: string
+  isAdmin: boolean
 }
 
 export async function getUserProfile(userId: string) {

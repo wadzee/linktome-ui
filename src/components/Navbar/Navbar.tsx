@@ -36,7 +36,7 @@ export const Navbar = () => {
       {!router?.profileId && !isLegalsPage && (
         <div className="hidden sm:block h-[68px]">
           <Link href="https://dashboard.linktome.xyz" target="_blank">
-            <Button variant="secondary">Login</Button>{' '}
+            <Button variant="secondary">Login</Button>
           </Link>
           <Link href="/politician">
             <Button isSquare>I&apos;m a politician</Button>
