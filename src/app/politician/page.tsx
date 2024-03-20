@@ -65,7 +65,7 @@ export default function PolictianPage() {
           />
         </div>
         <List className="order-1 sm:order-2">
-          <h2>Donate paid directly to your bank account</h2>
+          <h2>Donation paid directly to your bank account</h2>
           <Text className="text-light-navy sm:max-w-[75%]">
             Simplify your finances. Experience swift and direct transfers your
             funds, your account. Say goodbye to delays and paperwork, and keep

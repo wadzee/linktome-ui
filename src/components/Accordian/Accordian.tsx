@@ -14,10 +14,7 @@ export const Accordian = ({ accordians, className }: AccordianProps) => {
           <details key={idx} className="hover:cursor-pointer">
             <summary>{title}</summary>
             <div className="mt-4">
-              <p
-                dangerouslySetInnerHTML={{ __html: content }}
-                className="text-light-navy"
-              />
+              <p className="text-light-navy">{content}</p>
             </div>
           </details>
         )
