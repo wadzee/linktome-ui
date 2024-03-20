@@ -123,21 +123,21 @@ export default function PoliticanProfile({
               type="button"
               onClick={() => onSubmit({ amount: 5 })}
             >
-              Donate $5
+              Donate MYR 5
             </Button>
             <Button
               disabled={isSubmitting}
               type="button"
               onClick={() => onSubmit({ amount: 20 })}
             >
-              Donate $20
+              Donate MYR 20
             </Button>
             <Button
               disabled={isSubmitting}
               type="button"
               onClick={() => onSubmit({ amount: 10 })}
             >
-              Donate $10
+              Donate MYR 50
             </Button>
             {!showCustomDonationField && (
               <Button
@@ -153,7 +153,7 @@ export default function PoliticanProfile({
           {showCustomDonationField && (
             <div>
               <TextField<PaymentFormProps>
-                label="Amount ($)"
+                label="Amount (MYR)"
                 name="amount"
                 register={register}
                 required={false}
@@ -176,7 +176,7 @@ export default function PoliticanProfile({
           accordians={[
             {
               title: 'About me',
-              content: `<p>${data?.about}</p>`,
+              content: data?.about,
             },
           ]}
         />
