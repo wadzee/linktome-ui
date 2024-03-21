@@ -104,7 +104,7 @@ export default function PoliticanProfile({
             fill
             src={`https://linktome-assets.s3.ap-southeast-1.amazonaws.com/${data?.id}/${data?.image}`}
             alt="user-profile"
-            className="object-contain rounded-full sm:rounded-2xl"
+            className="object-cover rounded-full sm:rounded-2xl"
           />
         )}
       </div>
