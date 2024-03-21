@@ -12,6 +12,6 @@ export const HowItWorks = [
   {
     title: 'Secure fortnightly payouts',
     content:
-      'We handle all the payouts and only take a fee of 20%. See our fees.',
+      'Get peace of mind with our secure fortnightly payouts. We ensure reliable and scheduled transfers every two weeks, providing you with a steady stream of funds for your campaign or cause. Stay focused on making an impact while we handle the consistent financial support.',
   },
 ]
