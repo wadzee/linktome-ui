@@ -35,7 +35,7 @@ export const Navbar = () => {
       </Link>
       {!router?.profileId && !isLegalsPage && (
         <div className="hidden sm:block h-[68px]">
-          <Link href="https://dashboard.linktome.xyz" target="_blank">
+          <Link href="https://staging-dashboard.linktome.xyz" target="_blank">
             <Button variant="secondary">Login</Button>
           </Link>
           <Link href="/politician">
@@ -91,7 +91,7 @@ export const Navbar = () => {
           <Link href="/politician" onClick={() => setShowMobileMenu(false)}>
             <Button className="w-full">I&apos;m a politician</Button>
           </Link>
-          <Link href="https://dashboard.linktome.xyz" target="_blank">
+          <Link href="https://staging-dashboard.linktome.xyz" target="_blank">
             <Button
               className="h-fit border border-secondary-dark text-white w-full"
               variant="secondary"
