@@ -19,8 +19,8 @@ export default function HomePage() {
           <h1>
             Streamlining donations in a <u>safe</u> and <u>secure</u> way
           </h1>
-          <Text className="text-light-navy sm:text-xl sm:max-w-[300px]">
-            Have your voice heard. Support your politician by donating now!
+          <Text className="text-light-navy sm:text-xl sm:max-w-[400px]">
+            Have your voice heard. Support your favorite organization by donating now!
           </Text>
         </List>
         <div className="relative h-[60vh] sm:h-[70%]">
@@ -34,7 +34,7 @@ export default function HomePage() {
       </Grid2Cols>
       <section className="my-12 sm:my-0">
         <h2 className="max-w-[600px] mx-auto sm:text-center">
-          Accepting donations for politicians around the world
+          Accepting donations for organizations around the world
         </h2>
         <Grid3Cols className="gap-6 my-16 mx-auto">
           {Country.map((country, idx) => {
@@ -68,9 +68,9 @@ export default function HomePage() {
       <Accordian className="my-12 sm:my-0" accordians={HomeFaqs} />
       <section>
         <List className="max-w-[650px] mx-auto text-center sm:my-20 my-12">
-          <h2>Are you a politician and want to raise funds?</h2>
+          <h2>Are you an organization and want to raise funds?</h2>
           <Text className="text-xl text-light-navy">
-            Elevate your campaign effortlessly. If you&apos;re a politician, our
+            Elevate your campaign effortlessly. If you&apos;re an organization, our
             streamlined platform empowers you to connect with supporters
             seamlessly, making fundraising a breeze so you can focus on your
             campaign priorities.

@@ -39,7 +39,7 @@ export const Navbar = () => {
             <Button variant="secondary">Login</Button>
           </Link>
           <Link href="/politician">
-            <Button isSquare>I&apos;m a politician</Button>
+            <Button isSquare>I&apos;m an organization</Button>
           </Link>
         </div>
       )}
